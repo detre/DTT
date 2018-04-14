@@ -24,7 +24,7 @@ var userController = {
 	},
 	processSignup: function(req, res, next) {
 		var user = new User({
-			name     : req.body.name,
+			// name     : req.body.name,
 			username : req.body.username,
 			password : req.body.password
 		});
@@ -39,7 +39,7 @@ var userController = {
 			}
 			performLogin(req, res, next, user);
 		});
-	}, 
+	},
 	getAllUsers: function(req, res) {
 		User.find({}).exec(function(err, allUsers) {
 			if(err) {
@@ -79,7 +79,7 @@ var userController = {
 				})
 			}
 		})
-	}, 
+	},
 	updateLocation: function(req, res) {
 		var lati = req.body.lati;
 		var long = req.body.long;
