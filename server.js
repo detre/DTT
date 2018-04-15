@@ -6,7 +6,18 @@ var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/DTTP');
+// mongoose.connect('mongodb://localhost/DTTP');
+var uri = 'mongodb://leif:autechre1.@' +
+  'cluster0-shard-00-00-cuxto.mongodb.net:27017,' +
+  'cluster0-shard-00-01-cuxto.mongodb.net:27017,' +
+  'cluster0-shard-00-02-cuxto.mongodb.net:27017/DTTP?' +
+  'ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+
+mongoose.connect(uri).then(
+  () => { /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ },
+  err => {console.log(err) }
+);
+
 var userConfig = require('./user/userConfig');
 var userController = require('./user/userController');
 var goalController = require('./goals/goalController');
