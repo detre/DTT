@@ -62,7 +62,7 @@
 	</div>
 	<!-- DESKTOP LANDING PAGE -->
 		<!-- SIGNUP MODAL -->
-		<div class="modal fade clearfix" tabindex="-1" role="dialog" id="signupModal">
+		<div class="modal fade clearfix" tabindex="-1" role="dialog" id="signupModal" ng-app="userData" ng-controller='cntrl'>
 		  <div class="modal-dialog clearfix" role="document">
 		    <div class="modal-content clearfix">
 		      <div class="modal-body clearfix">
@@ -107,7 +107,7 @@
 				  		<h3 class="fieldset-header">Please confirm your information.</h3>
 				  		<div class="form-items-con">
 				  			<div class="confirmation-con">
-						    	<h4 class="confirmation-info">Username: @{{username}}</h4>
+						    	<h4 class="confirmation-info">Username: {{username}}</h4>
 						    	<h4 class="confirmation-info">Password: {{password}}</h4>
 						    	<h4 class="confirmation-info">Dream: {{dream}}</h4>
 					    	</div>
@@ -127,6 +127,14 @@
 		    </div>
 		  </div>
 		</div>
+		<script>
+			var app = angular.module('userData',[])
+			app.controller('cntrl',function($scope) {
+				$scope.username = "";
+				$scope.password = "";
+				$scope.dream = "";
+			});
+		</script>
 		<!-- END SIGNUP MODAL -->
 		<!-- LOGIN MODAL -->
 		<div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
@@ -155,7 +163,7 @@
 		    </div>
 		  </div>
 		</div>
-		<!-- END LOGIN MODAL -->	
+		<!-- END LOGIN MODAL -->
 		<!-- BOOTSTRAP-->
 		<script src="/js/custom-form.js"></script>
 	</body>
