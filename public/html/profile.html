@@ -18,7 +18,7 @@
       <div class="wrapper floatfix">
       <div class="test toggle">
         <div class="goals-default" >
-          <p>Click here to add a new goal!</p>
+          <button class="add-button">Click here to add a new goal!</button>
         </div>
         <div class="goals-con">
           <div class="goal floatfix" ng-repeat="goal in userGoalsArray | filter: { public: true, accomplished: false } | orderBy: '-timeStamp'" ng-class="{toggled: toggled}">

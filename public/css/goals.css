@@ -10,6 +10,12 @@
 	border-bottom: none;
 	cursor: pointer;
 }
+.add-button{
+	cursor: pointer;
+	color: #33cccc;
+	font-size: 20px;
+	margin: auto;
+}
 .option-toggle.up, .option-con {
 	display: none;
 }
