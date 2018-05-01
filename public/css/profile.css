@@ -6,7 +6,7 @@
 	width: 100%;
 	height: auto;
 	padding-top: 25px;
-	background-color: #333333;
+	background-color: #a1cfcf;
 }
 .profile-info-con {
 	width: 300px;
@@ -40,7 +40,7 @@
 	transition: opacity .6s;
 }
 .test.toggle {
-	opacity: 1; 
+	opacity: 1;
 }
 .floatfix:after {
   content: "";
@@ -211,47 +211,3 @@
 		transform: translateX(-68%);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
