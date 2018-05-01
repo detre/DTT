@@ -23,7 +23,7 @@
 					$scope.user = res.data;
 					(function checkUserImg() {
 						if($scope.user.image == undefined) {
-							$scope.user.image = '../../images/placeholder.png';
+							$scope.user.image = '../../images/logo_crop.png';
 						}
 						else {
 							$scope.user.image = $scope.user.image;
@@ -44,7 +44,7 @@
 				const data = {};
 				$http.get('/api/goals/get', data).then(function(response) {
 					$scope.allGoalsArray = response.data;
-					response.data.forEach(function(obj){ 
+					response.data.forEach(function(obj){
 						if(obj.userSubmitted.image == undefined) {
 							obj.userSubmitted.image = '../../images/placeholder.png';
 						}
@@ -63,7 +63,7 @@
 			        	getSessionUser();
 			        	getAllGoals();
 			      	});
-			    }, 
+			    },
 			    function (response) {
 			      	if (response.status > 0)
 			        	$scope.errorMsg = response.status + ': ' + response.data;
@@ -123,7 +123,7 @@
 			const getAllGoals = function() {
 				$http.get('/api/goals/get', data).then(function(response) {
 					$scope.allGoalsArray = response.data;
-					response.data.forEach(function(obj){ 
+					response.data.forEach(function(obj){
 						if(obj.userSubmitted.image == undefined) {
 							obj.userSubmitted.image = '../../images/placeholder.png';
 						}
@@ -263,15 +263,15 @@
 				zoom: 3,
 				center: latlng,
 				styles: [
-					{ 
+					{
 						elementType: 'geometry', stylers: [{color: '#242f3e'}] }, { elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}] }, { elementType: 'labels.text.fill',  stylers: [{color: '#746855'}] }, { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{color: '#d59563'}] }, { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{color: '#d59563'}] }, { featureType: 'poi.park', elementType: 'geometry', stylers: [{color: '#263c3f'}] }, { featureType: 'poi.park', elementType: 'labels.text.fill', stylers: [{color: '#6b9a76'}] }, { featureType: 'road', elementType: 'geometry', stylers: [{color: '#38414e'}] }, { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: '#212a37'}] }, { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#9ca5b3'}] }, { featureType: 'road.highway', elementType: 'geometry', stylers: [{color: '#746855'}] }, { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#1f2835'}] }, { featureType: 'road.highway', elementType: 'labels.text.fill', stylers: [{color: '#f3d19c'}] }, { featureType: 'transit', elementType: 'geometry', stylers: [{color: '#2f3948'}] }, { featureType: 'transit.station', elementType: 'labels.text.fill', stylers: [{color: '#d59563'}] }, { featureType: 'water', elementType: 'geometry', stylers: [{color: '#17263c'}] }, { featureType: 'water', elementType: 'labels.text.fill', stylers: [{color: '#515c6d'}] }, { featureType: 'water', elementType: 'labels.text.stroke', stylers: [{color: '#17263c'}]
 					}
-				]			
+				]
 			});
 			var markers = [];
 			$scope.locationsArray = [];
-			$http.get('/api/users/get').then(function(response){ 
-				response.data.forEach(function(obj){ 
+			$http.get('/api/users/get').then(function(response){
+				response.data.forEach(function(obj){
  					 var marker = new google.maps.Marker({
 					  position: new google.maps.LatLng(obj.lati, obj.long),
 					  map: map,
@@ -283,14 +283,14 @@
 					var contentString = '<img style="height: 50px; width: 50px; display: inline-block; border: 2px solid white; border-radius: 8px; background-image: url(../../images/placeholder.png); background-repeat: no-repeat; background-size: cover; background-position: center;" src="' + image + '"/>' + '<div style="display: inline-block; padding-left: 15px;">' + '@' + obj.username + '</div>' + '<div style="padding-top: 15px; width: 300px; line-height: 20px;">' + '</div>';
                     var infowindow = new google.maps.InfoWindow({
 					  content: contentString
-					});  
+					});
 					marker.addListener('click', function() {
 						infowindow.open(map, marker);
-					});								 
+					});
 					markers.push(marker);
                 });
                 var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-				markerCluster.addListener('click', function() {	
+				markerCluster.addListener('click', function() {
 				});
 			});
 		});
@@ -301,7 +301,7 @@
 	angular.module('DTTP').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: '/html/profile.html', 
+			templateUrl: '/html/profile.html',
 			controller: 'profileController'
 		})
 		.when('/goals', {
@@ -313,15 +313,15 @@
 			controller: 'profileController'
 		})
 		.when('/dreams', {
-			templateUrl: '/html/dreams.html', 
+			templateUrl: '/html/dreams.html',
 			controller: 'dreamController'
 		})
 		.when('/settings', {
-			templateUrl: '/html/settings.html', 
+			templateUrl: '/html/settings.html',
 			controller: 'settingsController'
 		})
 		/**************************
-		HASHBANG FIX 
+		HASHBANG FIX
 		**************************/
 		$locationProvider
 		.html5Mode(false)
