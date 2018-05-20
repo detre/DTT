@@ -1,5 +1,9 @@
 "use strict";
 (function($) {
+	$('.goals-default').click(function() {
+		$('.new-goal-modal-overlay').addClass('toggled');
+		$('.new-goal-modal').addClass('toggled');
+	});
 	$('.new-goal-holder').click(function() {
 		$('.new-goal-modal-overlay').addClass('toggled');
 		$('.new-goal-modal').addClass('toggled');
