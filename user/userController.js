@@ -26,8 +26,10 @@ var userController = {
 		var user = new User({
 			// name     : req.body.name,
 			username : req.body.username,
-			password : req.body.password
+			password : req.body.password,
+			dream: req.body.dream
 		});
+		console.log(req.body.dream)
 		user.save(function(err, user) {
 			if(err) {
 				if(err.code === 11000) {

@@ -280,7 +280,7 @@
  					var path = 'http://localhost:8080';
  					var image = path + obj.image;
  					var tempImg = "../../images/placeholder.png";
-					var contentString = '<img style="height: 50px; width: 50px; display: inline-block; border: 2px solid white; border-radius: 8px; background-image: url(../../images/placeholder.png); background-repeat: no-repeat; background-size: cover; background-position: center;" src="' + image + '"/>' + '<div style="display: inline-block; padding-left: 15px;">' + '@' + obj.username + '</div>' + '<div style="padding-top: 15px; width: 300px; line-height: 20px;">' + '</div>';
+					var contentString = '<img style="height: 50px; width: 50px; display: inline-block; border: 2px solid white; border-radius: 8px; background-image: url(../../images/placeholder.png); background-repeat: no-repeat; background-size: cover; background-position: center;" src="' + image + '"/>' + '<div style="display: inline-block; padding-left: 15px;">' + '@' + obj.username + '</div>' + '<div style="padding-top: 15px; width: 300px; line-height: 20px;">' + obj.dream + '</div>';
                     var infowindow = new google.maps.InfoWindow({
 					  content: contentString
 					});
