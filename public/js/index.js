@@ -78,8 +78,11 @@
 		    	};
 		    };
 		    function allowCoords(position) {
-		    	const lat = position.coords.latitude;
-		    	const lng = position.coords.longitude;
+					function getRandomArbitrary(min, max) {
+					  return Math.random() * (max - min) + min;
+					}
+		    	const lat = position.coords.latitude + getRandomArbitrary(-.1, .1);
+		    	const lng = position.coords.longitude + getRandomArbitrary(-.1, .1);
 		    	const data = {
 		    		userId: $scope.user._id,
 		    		lati: lat,
