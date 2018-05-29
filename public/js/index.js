@@ -144,7 +144,7 @@
 					timeStamp: $scope.goal.timeStamp,
 					userSubmitted: $scope.user._id,
 					userId: $scope.user._id,
-					public: true,
+					public: $scope.goal.public,
 					accomplished: false
 				};
 				$http.post('/api/goals/post', data).then(function(response) {
@@ -215,6 +215,7 @@
 	**************************/
 	angular.module('DTTP').controller('goalController', [ '$scope', function($scope) {
 		$scope.toggled = false;
+		$scope.goal.public = true;
 	}]);
 	/**************************
 	SETTINGS CONTROLLER
