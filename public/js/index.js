@@ -215,7 +215,6 @@
 	**************************/
 	angular.module('DTTP').controller('goalController', [ '$scope', function($scope) {
 		$scope.toggled = false;
-		$scope.goal.public = true;
 	}]);
 	/**************************
 	SETTINGS CONTROLLER
