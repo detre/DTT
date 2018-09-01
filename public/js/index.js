@@ -304,8 +304,8 @@
 	angular.module('DTTP').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: '/html/profile.html',
-			controller: 'profileController'
+			templateUrl: '/html/dreams.html',
+			controller: 'dreamController'
 		})
 		.when('/goals', {
 			templateUrl: '/html/goals.html',
