@@ -272,13 +272,15 @@
 				]
 			});
 			var markers = [];
+			var map_icon = "../../images/clouds.png";
 			$scope.locationsArray = [];
 			$http.get('/api/users/get').then(function(response){
 				response.data.forEach(function(obj){
  					 var marker = new google.maps.Marker({
 					  position: new google.maps.LatLng(obj.lati, obj.long),
 					  map: map,
-					  image: obj.image
+					  image: obj.image,
+						icon: map_icon
 					});
  					var path = 'http://localhost:8080';
  					var image = path + obj.image;
@@ -304,8 +306,8 @@
 	angular.module('DTTP').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: '/html/profile.html',
-			controller: 'profileController'
+			templateUrl: '/html/dreams.html',
+			controller: 'dreamController'
 		})
 		.when('/goals', {
 			templateUrl: '/html/goals.html',
