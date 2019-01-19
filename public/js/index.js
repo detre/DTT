@@ -104,6 +104,13 @@
 		    $scope.denyLocation = function() {
 		    	denyLocation();
 		    };
+				$scope.updateDream = function() {
+					const data = {
+						userId: $scope.user._id,
+						dream: $scope.user.dream
+					};
+					$http.post('api/user/updateDream', data).then(function(res) {});
+				};
 		    (function getThisUsersGoal() {
 		    	$scope.thisUsersGoals = [];
 		    	$scope.theUser = [];

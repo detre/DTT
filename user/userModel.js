@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var userSchema = mongoose.Schema({
 	// name      : {type: String, required: true},
 	dream     : {type: String},
+	dream_og  : {type: String},
 	username  : {type: String, unique: true, required: true},
 	password  : {type: String, unique: true, required: true},
 	image     : {type: String},
