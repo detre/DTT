@@ -15,7 +15,7 @@ app.use(session({
   resave: true,
   saveUninitialized: false
 }));
-app.use(passport.initialize()); 
+app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -41,6 +41,8 @@ app.get('/api/users/get', userController.getAllUsers);
 app.post('/api/user/updatePhoto', multipartMiddleware, userController.updatePhoto);
 /* GET USER LOCATION */
 app.post('/api/user/updateLocation', userController.updateLocation);
+/* UPDATE USER DREAM */
+app.post('/api/user/updateDream', userController.updateDream);
 /* POST NEW GOAL */
 app.post('/api/goals/post', goalController.postGoal);
 /* GET USER GOALS */
@@ -55,33 +57,3 @@ var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('Server running on port ' + port);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

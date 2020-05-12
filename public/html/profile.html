@@ -20,6 +20,9 @@
         <div class="goals-default" >
           <button class="add-button">Click here to add a new goal!</button>
         </div>
+        <div class="dream-default" >
+          <button class="add-button">Click here to change your dream!</button>
+        </div>
         <div class="goals-con">
           <div class="goal floatfix" ng-repeat="goal in userGoalsArray | filter: { public: true, accomplished: false } | orderBy: '-timeStamp'" ng-class="{toggled: toggled}">
             <div class="goal-grid">
@@ -85,6 +88,7 @@
     </div>
 </div>
 <script type="text/javascript" src="../js/new-goal.js"></script>
+<script type="text/javascript" src="../js/edit-dream.js"></script>
 <!--<form name="myForm">
     <fieldset>
       <br>Photo:

@@ -98,7 +98,7 @@
 				  	<fieldset>
 				  		<h1 class="fieldset-header">What's your dream?</h1>
 				  		<div class="form-items-con">
-					    	<textarea class="form-input" placeholder="Share Your Dream..." id="form-dream" type="text" name="dream" ng-model="dream"></textarea>
+					    	<textarea class="form-input" placeholder="Share Your Dream..." id="form-dream" type="text" name="dream" ng-model="dream_og"></textarea>
 					    </div>
 					    <input type="button" name="previous" class="previous action-button" value="Previous" />
 					    <input type="button" name="next" class="next action-button" value="Next" />
@@ -132,7 +132,7 @@
 			app.controller('cntrl',function($scope) {
 				$scope.username = "";
 				$scope.password = "";
-				$scope.dream = "";
+				$scope.dream_og = "";
 			});
 		</script>
 		<!-- END SIGNUP MODAL -->

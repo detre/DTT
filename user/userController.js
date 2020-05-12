@@ -27,7 +27,8 @@ var userController = {
 			// name     : req.body.name,
 			username : req.body.username,
 			password : req.body.password,
-			dream: req.body.dream
+			dream: req.body.dream,
+			dream_og: req.body.dream
 		});
 		user.save(function(err, user) {
 			if(err) {
@@ -89,6 +90,24 @@ var userController = {
 			var user = userData;
 			user.lati = lati;
 			user.long = long;
+			user.save(function(err) {
+				if(err) {
+					console.log("fail");
+					res.json({status: 500});
+				}
+				else {
+					console.log("success");
+					res.json({status: 200});
+				}
+			})
+		})
+	},
+	updateDream: function(req, res) {
+		var dream = req.body.dream;
+		var userId = req.body.userId;
+		User.findById(userId, function(err, userData) {
+			var user = userData;
+			user.dream = dream;
 			user.save(function(err) {
 				if(err) {
 					console.log("fail");

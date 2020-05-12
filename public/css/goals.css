@@ -10,6 +10,13 @@
 	border-bottom: none;
 	cursor: pointer;
 }
+.dream-default {
+	width: 100%;
+	height: auto;
+	margin: 30px;
+	border-bottom: none;
+	cursor: pointer;
+}
 .add-button{
 	cursor: pointer;
 	color: #33cccc;
@@ -83,7 +90,34 @@
 	z-index: 10;
 	background: linear-gradient(to bottom right, rgba(51, 204, 204, .9), rgba(153, 102, 255, .9));
 }
+.edit-dream-modal-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: transparent;
+	transition: background .5s;
+}
+.edit-dream-modal-overlay.toggled {
+	z-index: 10;
+	background: linear-gradient(to bottom right, rgba(51, 204, 204, .9), rgba(153, 102, 255, .9));
+}
 .new-goal-modal {
+	position: fixed;
+	width: 50%;
+	height: auto;
+	background-color: #fff;
+	border-radius: 5px;
+	left: 50%;
+	top: -100%;
+	transform: translate(-50%, 0%);
+	transition: top .5s, transform .5s;
+}
+.edit-dream-modal.toggled {
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.edit-dream-modal {
 	position: fixed;
 	width: 50%;
 	height: auto;
@@ -123,6 +157,35 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+.edit-dream-modal.toggled {
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.edit-dream-modal-head {
+	position: relative;
+	padding: 15px 15px 35px 15px;
+}
+.edit-dream-modal-body, .edit-dream-modal-footer {
+	padding: 15px 15px 15px 15px;
+}
+.edit-dream-modal-footer {
+	position: relative;
+}
+.edit-dream-modal-footer span {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+.edit-dream-modal-head, .edit-dream-modal-body {
+	border-bottom: 1px solid #f2f2f2;
+}
+.edit-dream-modal-head p {
+	position: absolute;
+	color: #33cccc;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 .new-goal-exit {
 	width: 20px;
 	height: 20px;
@@ -135,7 +198,26 @@
 .new-goal-exit:hover {
 	cursor: pointer;
 }
+.edit-dream-exit {
+	width: 20px;
+	height: 20px;
+	float: right;
+	background-image: url('../../images/goal-modal-exit.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.edit-dream-exit:hover {
+	cursor: pointer;
+}
 .new-goal-modal-body textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #f2f2f2;
+}
+.edit-dream-modal-body textarea {
 	width: 100%;
 	height: 100px;
 	padding: 10px;
@@ -152,6 +234,19 @@
 	float: right;
 }
 .new-goal-modal-footer button:hover {
+	cursor: pointer;
+	background-color: #f2f2f2;
+}
+.edit-dream-modal-footer button {
+	padding: 15px 25px 15px 25px;
+	border: 1px solid #f2f2f2;
+	font-size: 16px;
+	background-color: #fff;
+	border-radius: 5px;
+	color: #33cccc;
+	float: right;
+}
+.edit-dream-modal-footer button:hover {
 	cursor: pointer;
 	background-color: #f2f2f2;
 }

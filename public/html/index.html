@@ -109,6 +109,24 @@
 				</div>
 			</div>
 		</div>
+		<!-- EDIT DREAM MODAL -->
+	<form ng-submit="updateDream()">
+		<div class="edit-dream-modal-overlay">
+			<div class="edit-dream-modal">
+				<div class="edit-dream-modal-head">
+					<p>Edit Your Dream</p>
+					<div class="edit-dream-exit"></div>
+				</div>
+				<div class="edit-dream-modal-body">
+					<input type="text" ng-model="user.dream"></input>
+				</div>
+				<div class="edit-dream-modal-footer floatfix">
+					<span>Changes to dreams will be visible on the map.</span>
+					<button>Submit</button>
+				</div>
+			</div>
+		</div>
+	</form>
 		<!-- LOCATION PERMISSION MODAL -->
 		<div class="location-permission-modal-overlay">
 			<div class="location-permission-modal">
@@ -139,6 +157,7 @@
 		<script type="text/javascript" src="../js/nav.js"></script>
 		<script type="text/javascript" src="../js/popout-nav.js"></script>
 		<script type="text/javascript" src="../js/new-goal.js"></script>
+		<script type="text/javascript" src="../js/edit-dream.js"></script>
 		<script type="text/javascript" src="../js/location-permission.js"></script>
 		<script type="text/javascript" src="../js/goal-options.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWvqMR3rf-nb-r-tqMfEQC8rKx-LxQarg"></script>
